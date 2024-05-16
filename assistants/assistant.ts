@@ -39,7 +39,10 @@ export const assistant: CreateAssistantDTO | any = {
   transcriber: {
     provider: "deepgram",
     model: "nova-2",
+    
     language: "ko-KR",
+    //language: "en-US",
+
   },
 
   recordingEnabled: false,
@@ -47,7 +50,7 @@ export const assistant: CreateAssistantDTO | any = {
   model: {
     provider: "openai",
 
-    model: "gpt-4",
+    model: "gpt-4o",
     
     //model: "gpt-3.5-turbo",
     ///model: "gpt-4o",
@@ -79,7 +82,10 @@ export const assistant: CreateAssistantDTO | any = {
     functions: [
       {
         name: "suggestShows",
-        async: true,
+        
+        //async: true, // remove async to wait for BE response.
+        async: false,
+
         description: "Suggests a list of broadway shows to the user.",
         parameters: {
           type: "object",
@@ -153,6 +159,68 @@ export const assistant: CreateAssistantDTO | any = {
           },
         },
       },
+
+
+
+
+      {
+        name: "getRandomName",
+        async: false,
+        description: "Generates a random name based on optional gender and nationality",
+        parameters: {
+          type: "object",
+          properties: {
+            gender: {
+              type: "string",
+              enum: ["male", "female"],
+              description: "The gender for which to generate a name."
+            },
+            nat: {
+              type: "string",
+              description: "The nationality based on which to generate a name. Example: IN for India, US for United States of America or USA and so on."
+            }
+          }
+        }
+      },
+
+      {
+        name: "getCharacterInspiration",
+        async: false,
+        description: "Provides character inspiration based on a given query provided by the author.",
+        parameters: {
+          type: "object",
+          properties: {
+            inspiration: {
+              type: "string",
+              description: "Based on the user query, this defines the inspiration that the author is looking for. It could be some kind of similarity or something else as well."
+            }
+          }
+        }
+      },
+
+      {
+        name: "sendEmail",
+        description:
+          "Send email to the given email address and with the given content.",
+        parameters: {
+          type: "object",
+          properties: {
+            email: {
+              type: "string",
+              description:
+                "Email to which we want to send the content.",
+            },
+            content: {
+              type: "string",
+              description:
+                "Actual Content of the email to be sent.",
+            },
+          },
+          required: ["email"],
+        },
+      },
+
+
     ],
   },
 

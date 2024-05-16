@@ -106,11 +106,7 @@ export function useVapi() {
 
     
     const response = vapi.start(assistant);
-
-
-  
     
-
     /*
     const response = vapi.start(
       {
@@ -119,25 +115,30 @@ export function useVapi() {
         : "https://08ae-202-43-120-244.ngrok-free.app/api/webhook",
       }
     );
-
+    
+    */
 
     
     response.then((res) => {
       console.log("call", res);
 
-      vapi.send({
-        type: MessageTypeEnum.ADD_MESSAGE,
-        message: {
-          role: "assistant",
-          content: null,
-        },
-      });
-      
-  
 
     });
-    */
+  
+    
 
+
+    /*
+        vapi.send({
+      type: MessageTypeEnum.ADD_MESSAGE,
+      message: {
+        role: "system",
+        content: `Here is the list of suggested shows: ${JSON.stringify(
+          shows.map((show) => show.title)
+        )}`,
+      },
+    });
+    */
 
 
 
@@ -209,4 +210,5 @@ export function useVapi() {
     stop,
     toggleCall,
   };
+
 }

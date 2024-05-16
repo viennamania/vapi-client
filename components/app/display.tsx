@@ -21,7 +21,12 @@ function Display() {
   const [confirmDetails, setConfirmDetails] = React.useState<{}>();
 
   useEffect(() => {
+
     const onMessageUpdate = (message: Message) => {
+
+      console.log("message", message);
+
+
       if (
         message.type === MessageTypeEnum.FUNCTION_CALL &&
         message.functionCall.name === "suggestShows"
@@ -66,10 +71,13 @@ function Display() {
 
     vapi.on("message", onMessageUpdate);
     vapi.on("call-end", reset);
+
+
     return () => {
       vapi.off("message", onMessageUpdate);
       vapi.off("call-end", reset);
     };
+
   }, []);
 
   return (
@@ -86,6 +94,7 @@ function Display() {
       ) : null}
     </>
   );
+
 }
 
 export { Display };
