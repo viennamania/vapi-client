@@ -55,7 +55,8 @@ export function useVapi() {
     };
 
     const onVolumeLevel = (volume: number) => {
-      console.log("Volume level", volume);
+      ///console.log("Volume level", volume);
+      
       setAudioLevel(volume);
     };
 
