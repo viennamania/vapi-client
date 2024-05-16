@@ -56,7 +56,7 @@ export function useVapi() {
 
     const onVolumeLevel = (volume: number) => {
       ///console.log("Volume level", volume);
-      
+
       setAudioLevel(volume);
     };
 
@@ -103,11 +103,81 @@ export function useVapi() {
     console.log("start");
 
     setCallStatus(CALL_STATUS.LOADING);
+
+    
     const response = vapi.start(assistant);
 
+
+  
+    
+
+    /*
+    const response = vapi.start(
+      {
+        serverUrl: process.env.NEXT_PUBLIC_SERVER_URL
+        ? process.env.NEXT_PUBLIC_SERVER_URL
+        : "https://08ae-202-43-120-244.ngrok-free.app/api/webhook",
+      }
+    );
+
+
+    
     response.then((res) => {
       console.log("call", res);
+
+      vapi.send({
+        type: MessageTypeEnum.ADD_MESSAGE,
+        message: {
+          role: "assistant",
+          content: null,
+        },
+      });
+      
+  
+
     });
+    */
+
+
+
+
+        // request to backend to request for assistant
+
+    // assistant-request
+    /*
+    export enum VapiWebhookEnum {
+      ASSISTANT_REQUEST = "assistant-request",
+      FUNCTION_CALL = "function-call",
+      STATUS_UPDATE = "status-update",
+      END_OF_CALL_REPORT = "end-of-call-report",
+      HANG = "hang",
+      SPEECH_UPDATE = "speech-update",
+      TRANSCRIPT = "transcript",
+    }
+    */
+
+    /*
+    vapi.send({
+      type: "assistant-request",
+      message: {
+        role: "user",
+        content: "Hello",
+      },
+    });
+    */
+    /*
+    vapi.send({
+      type: "add-message",
+      message: {
+        role: "system", // system, user, assistant, tool or function
+        content: "The user has pressed the button, say peanuts",
+      },
+    });
+    */
+
+
+
+
   };
 
   const stop = () => {
