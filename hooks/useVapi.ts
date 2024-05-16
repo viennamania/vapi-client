@@ -33,7 +33,12 @@ export function useVapi() {
   const [audioLevel, setAudioLevel] = useState(0);
 
   useEffect(() => {
-    const onSpeechStart = () => setIsSpeechActive(true);
+    
+    const onSpeechStart = () => {
+      console.log("Speech has started");
+      setIsSpeechActive(true);
+    }
+
     const onSpeechEnd = () => {
       console.log("Speech has ended");
       setIsSpeechActive(false);
@@ -50,6 +55,7 @@ export function useVapi() {
     };
 
     const onVolumeLevel = (volume: number) => {
+      console.log("Volume level", volume);
       setAudioLevel(volume);
     };
 
@@ -92,6 +98,9 @@ export function useVapi() {
   }, []);
 
   const start = async () => {
+    
+    console.log("start");
+
     setCallStatus(CALL_STATUS.LOADING);
     const response = vapi.start(assistant);
 
@@ -101,11 +110,17 @@ export function useVapi() {
   };
 
   const stop = () => {
+
+    console.log("stop");
+
     setCallStatus(CALL_STATUS.LOADING);
     vapi.stop();
   };
 
   const toggleCall = () => {
+
+    console.log("toggleCall");
+
     if (callStatus == CALL_STATUS.ACTIVE) {
       stop();
     } else {
