@@ -45,8 +45,8 @@ export const assistant: CreateAssistantDTO | any = {
   model: {
     provider: "openai",
     
-    model: "gpt-3.5-turbo",
-    //model: "gpt-4o",
+    //model: "gpt-3.5-turbo",
+    model: "gpt-4o",
 
     temperature: 0.7,
     
