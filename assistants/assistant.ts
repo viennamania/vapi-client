@@ -242,13 +242,13 @@ export const assistant: CreateAssistantDTO | any = {
 
   "안녕, 나는 경희야. 너는 누구니?",
 
-  /*
+  
   serverUrl: process.env.NEXT_PUBLIC_SERVER_URL
     ? process.env.NEXT_PUBLIC_SERVER_URL
     : "https://08ae-202-43-120-244.ngrok-free.app/api/webhook",
-  */
-  serverUrl: "https://08ae-202-43-120-244.ngrok-free.app/api/webhook",
   
+  //serverUrl: "https://08ae-202-43-120-244.ngrok-free.app/api/webhook",
+
 };
 
 
