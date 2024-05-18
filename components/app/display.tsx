@@ -42,6 +42,7 @@ function Display() {
           },
         });
         setShowList(shows);
+
       } else if (
         message.type === MessageTypeEnum.FUNCTION_CALL &&
         (message.functionCall.name === "confirmDetails" ||
@@ -61,6 +62,7 @@ function Display() {
           message.functionCall.name === "confirmDetails" ? "confirm" : "ticket"
         );
       }
+
     };
 
     const reset = () => {
@@ -80,11 +82,15 @@ function Display() {
 
   }, []);
 
+
+
   return (
     <>
+    
       {showList.length > 0 && status == "show" ? (
         <ShowsComponent showList={showList} />
       ) : null}
+
       {status !== "show" ? (
         <Ticket
           type={status}
@@ -92,6 +98,7 @@ function Display() {
           params={confirmDetails}
         />
       ) : null}
+
     </>
   );
 
