@@ -50,9 +50,9 @@ export const assistant: CreateAssistantDTO | any = {
   model: {
     provider: "openai",
 
-    //model: "gpt-4o",
+    model: "gpt-4o",
 
-    model: "gpt-4",
+   // model: "gpt-4",
     
     ///model: "gpt-3.5-turbo",
 
@@ -318,7 +318,7 @@ export const assistant: CreateAssistantDTO | any = {
     
   //"Greetings, traveler. This is Elenya, the VerKyungHeet Guardian. How may I assist you on your journey through the natural world?",
 
-  "안녕, 나 경희야",
+  "안녕, 나 경희야. 나랑 놀자. 뭐 할래?",
 
   
   serverUrl: process.env.NEXT_PUBLIC_SERVER_URL
