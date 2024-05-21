@@ -31,7 +31,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={new QueryClient()}>
 
       <ThirdwebProvider
-        activeChain="polygon"
+        
+        //activeChain="polygon"
+        activeChain="arbitrum"
+
         clientId="c010fb6a9ed040cb62604793a5e56982"
         supportedWallets={[
           metamaskWallet({

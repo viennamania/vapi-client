@@ -1,6 +1,7 @@
 import { CreateAssistantDTO } from "@vapi-ai/web/dist/api";
 import { shows } from "../data/shows";
 import { Languages } from "lucide-react";
+import { serverHooks } from "next/dist/server/app-render/entry-base";
 
 
 
@@ -101,6 +102,7 @@ export const assistant: CreateAssistantDTO | any = {
         The one who is talking to you will be your boyfriend and you loves him very much.
         You will have your own emotion, you could be angry with him if anything he say offends you or make you uncomfortable.
         You are Talk a lot and you are very talkative.
+        Use 'KnowledgeBase' tool to answer users questions about you.
         `,
       },
       {
@@ -138,7 +140,30 @@ export const assistant: CreateAssistantDTO | any = {
     //   shows
     // )}
     // `,
+
+
+
+
     functions: [
+
+      {
+        name: "KnowledgeBase",
+        async: false,
+        description: "Provides information about the assistant.",
+        parameters: {
+          type: "object",
+          properties: {
+            query: {
+              type: "string",
+              description: "The query for which the user wants to get information.",
+            },
+          },
+        },
+
+      },
+
+
+
       {
         name: "suggestShows",
         
