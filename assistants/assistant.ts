@@ -161,7 +161,7 @@ export const assistant: CreateAssistantDTO | any = {
         parameters: {
           type: "object",
           properties: {
-            query: {
+            question: {
               type: "string",
               description: "The query for which the user wants to get information.",
             },
