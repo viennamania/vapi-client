@@ -20,6 +20,7 @@ export enum CALL_STATUS {
 }
 
 export function useVapi() {
+
   const [isSpeechActive, setIsSpeechActive] = useState(false);
   const [callStatus, setCallStatus] = useState<CALL_STATUS>(
     CALL_STATUS.INACTIVE
@@ -61,7 +62,11 @@ export function useVapi() {
     };
 
     const onMessageUpdate = (message: Message) => {
-      console.log("message", message);
+
+      console.log("message======>", message);
+      console.log("message type", message.type);
+      
+      
       if (
         message.type === MessageTypeEnum.TRANSCRIPT &&
         message.transcriptType === TranscriptMessageTypeEnum.PARTIAL

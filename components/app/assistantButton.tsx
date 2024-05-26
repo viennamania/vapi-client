@@ -7,12 +7,14 @@ const AssistantButton = ({
   callStatus,
   audioLevel = 0,
 }: Partial<ReturnType<typeof useVapi>>) => {
+  
   const color =
     callStatus === CALL_STATUS.ACTIVE
       ? "red"
       : callStatus === CALL_STATUS.LOADING
       ? "orange"
       : "green";
+
   const buttonStyle = {
     borderRadius: "50%",
     width: "50px",

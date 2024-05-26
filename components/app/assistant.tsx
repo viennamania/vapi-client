@@ -65,13 +65,13 @@ function Assistant() {
       </div>
       
       {address && (
-      <div className="user-input">
-        <AssistantButton
-          audioLevel={audioLevel}
-          callStatus={callStatus}
-          toggleCall={toggleCall}
-        />
-      </div>
+        <div className="user-input">
+          <AssistantButton
+            audioLevel={audioLevel}
+            callStatus={callStatus}
+            toggleCall={toggleCall}
+          />
+        </div>
       )}
 
      

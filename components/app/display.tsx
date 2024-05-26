@@ -24,7 +24,8 @@ function Display() {
 
     const onMessageUpdate = (message: Message) => {
 
-      console.log("message", message);
+      console.log("message type", message.type);
+      
 
 
       if (
@@ -51,6 +52,7 @@ function Display() {
         const params = message.functionCall.parameters;
 
         setConfirmDetails(params);
+        
         console.log("parameters", params);
 
         const result = shows.find(
