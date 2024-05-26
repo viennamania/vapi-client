@@ -20,7 +20,7 @@ export default function Home() {
           {/*
           Talk with Sarah to explore upcoming shows and book tickets.
           */}
-          Talk with KyungHee.
+          Talk with Seunghyon.
         </p>
 
         {/* powered by famnote */}
