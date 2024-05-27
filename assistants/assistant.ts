@@ -195,8 +195,8 @@ export const assistant: CreateAssistantDTO | any = {
       {
         name: "suggestShows",
         
-        //async: true, // remove async to wait for BE response.
-        async: false,
+        async: true, // remove async to wait for BE response.
+        //async: false,
 
         description: "Suggests a list of broadway shows to the user.",
         parameters: {

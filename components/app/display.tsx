@@ -6,6 +6,7 @@ import { ShowsComponent } from "./shows";
 import { Ticket } from "./ticket";
 
 function Display() {
+  
   const [showList, setShowList] = React.useState<Array<(typeof shows)[number]>>(
     []
   );
@@ -65,6 +66,7 @@ function Display() {
         );
       }
 
+
     };
 
     const reset = () => {
@@ -90,7 +92,9 @@ function Display() {
     <>
     
       {showList.length > 0 && status == "show" ? (
+        
         <ShowsComponent showList={showList} />
+
       ) : null}
 
       {status !== "show" ? (
@@ -100,6 +104,7 @@ function Display() {
           params={confirmDetails}
         />
       ) : null}
+
 
     </>
   );
