@@ -2,6 +2,9 @@ import { shows } from "@/data/shows";
 import { vapi } from "../../lib/vapi.sdk";
 import { MessageTypeEnum } from "../../lib/types/conversation.type";
 
+import Image from "next/image";
+
+
 interface TicketProps {
   type: "confirm" | "ticket";
   show: (typeof shows)[0];
@@ -27,11 +30,20 @@ function Ticket({
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
+            {/*
             <img
               className="w-full rounded-lg shadow-lg"
               src={show.img}
               alt="Concert Image"
               width={200}
+            />
+            */}
+            <Image
+              className="w-full rounded-lg shadow-lg"
+              src={show.img}
+              alt="Concert Image"
+              width={200}
+              height={200}
             />
           </div>
           <div className="w-full lg:w-1/2 px-4">

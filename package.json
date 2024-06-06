@@ -12,7 +12,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@thirdweb-dev/react": "^4.6.24",
     "@thirdweb-dev/sdk": "^4.0.85",
-    "@vapi-ai/web": "^1.0.266",
+    "@vapi-ai/web": "^1.1.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "ethers": "^5",

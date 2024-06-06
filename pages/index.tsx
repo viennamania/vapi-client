@@ -9,6 +9,7 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-12 ${inter.className}`}
     >
+
       <div className="text-center">
         <h1 className="text-3xl">Welcome to AI Companion</h1>
 
@@ -30,13 +31,16 @@ export default function Home() {
             target="_blank"
             className="text-sm text-slate-500"
           >
-            Powered by Famnote
+            Powered by famnote
           </a>
         </div>
 
-
       </div>
-      <Assistant />
+
+      <div className="flex flex-col items-center justify-center gap-4 mb-10">
+        <Assistant />
+      </div>
+
     </main>
   );
 }

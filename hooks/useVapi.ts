@@ -2,6 +2,7 @@
 
 import { assistant } from "@/assistants/assistant";
 
+
 import {
   Message,
   MessageTypeEnum,
@@ -103,6 +104,7 @@ export function useVapi() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
   const start = async () => {
     
     console.log("start");
@@ -132,6 +134,7 @@ export function useVapi() {
 
     
     response.then((res) => {
+
       console.log("call", res);
 
 
@@ -192,6 +195,9 @@ export function useVapi() {
 
 
   };
+
+
+
 
   const stop = () => {
 

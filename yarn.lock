@@ -2401,10 +2401,19 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
-"@vapi-ai/web@^1.0.263", "@vapi-ai/web@^1.0.266":
+"@vapi-ai/web@^1.0.263":
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/@vapi-ai/web/-/web-1.1.4.tgz#6ab619d9d5344a962344e3de5678276803c77502"
   integrity sha512-xOm60V3I2XkY+jE1gQEnrVAsd7jSSwjJj4iXW7eudxHWz9qdVBP25WuPx4VJFOq45Iv3evDP2QbABcNiCsgjBQ==
+  dependencies:
+    "@daily-co/daily-js" "^0.58.0"
+    "@vapi-ai/web" "^1.0.263"
+    events "^3.3.0"
+
+"@vapi-ai/web@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@vapi-ai/web/-/web-1.1.7.tgz#6d362f0fabea74d36ad979b5edebae96105b0ad8"
+  integrity sha512-fP9S6uVPLCr0lvK+18DBQYDCTcQFUxm79fZ785sh8FfQRT3j2iFgQJILf38I476OWXDcC+heWmTKaGvuseiI4A==
   dependencies:
     "@daily-co/daily-js" "^0.58.0"
     "@vapi-ai/web" "^1.0.263"
