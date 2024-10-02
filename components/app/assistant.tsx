@@ -16,20 +16,26 @@ import {
 function Assistant() {
 
 
-  const address = useAddress();
+  //const address = useAddress();
+
+  const address = '0x';
 
 
   const { toggleCall, callStatus, audioLevel } = useVapi();
 
   return (
-    <>
+    <div>
 
       {/* Connect Wallet */}
+      {/*}
       <div className="connect-wallet">
         <ConnectWallet
           theme={"light"}
         />
       </div>
+      */}
+
+
 
       <div className="chat-history">
         <Display />
@@ -46,7 +52,8 @@ function Assistant() {
       )}
 
      
-    </>
+    </div>
+
   );
 }
 

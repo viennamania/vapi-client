@@ -71,11 +71,16 @@ export const assistant: CreateAssistantDTO | any = {
   name: "Paula-broadway",
 
   transcriber: {
+
     provider: "deepgram",
+
     model: "nova-2",
     
-    language: "ko-KR",
+    //language: "ko-KR",
     //language: "en-US",
+
+    // 중국어
+    language: "zh-CN",
 
   },
 
@@ -84,7 +89,9 @@ export const assistant: CreateAssistantDTO | any = {
   model: {
     provider: "openai",
 
+    
     model: "gpt-4o",
+
 
    // model: "gpt-4",
     
@@ -130,14 +137,17 @@ export const assistant: CreateAssistantDTO | any = {
     After this confirm the details and book the tickets.
     */
 
+
+    
     messages: [
+      /*
       {
         role: "system",
 
         content: systemPrompt2,
 
       },
-
+      */
 
     ],
 
@@ -380,7 +390,10 @@ export const assistant: CreateAssistantDTO | any = {
     
   //"Greetings, traveler. This is Elenya, the VerKyungHeet Guardian. How may I assist you on your journey through the natural world?",
 
-  "안녕, 나랑 놀자. 뭐 할래?",
+  //"안녕, 나랑 놀자. 뭐 할래?",
+
+  //"안녕하세요. 무엇을 도와드릴까요?", 중국어로
+  "你好，我是你的助手。我可以帮你什么？",
 
   
   serverUrl: process.env.NEXT_PUBLIC_SERVER_URL
