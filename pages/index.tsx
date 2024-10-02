@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import { Assistant } from "@/components/app/assistant";
 
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -11,11 +13,23 @@ export default function Home() {
     >
 
       <div className="text-center mt-20">
+
+        {/* logo image */}
+        <div className="flex justify-center">
+        <Image
+          src="/logo-olga.png"
+          alt="AI Companion"
+          width={100}
+          height={100}
+          className="rounded-md"
+        />
+        </div>
+
         {/*
         <h1 className="text-3xl">Welcome to AI Companion</h1>
         */}
         {/* 중국어로 번역 */}
-        <h1 className="text-3xl">欢迎来到人工智能伴侣</h1>
+        <h1 className="mt-10 text-3xl">欢迎来到人工智能伴侣</h1>
 
         {/*
         <p className="text-slate-600 mt-2 text-lg">
@@ -31,7 +45,7 @@ export default function Home() {
 
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-4 mb-64">
+      <div className="flex flex-col items-center justify-center gap-4 mb-52">
         
         <Assistant />
       </div>
