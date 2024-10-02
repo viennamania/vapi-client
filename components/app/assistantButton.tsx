@@ -17,8 +17,8 @@ const AssistantButton = ({
 
   const buttonStyle = {
     borderRadius: "50%",
-    width: "50px",
-    height: "50px",
+    width: "200px",
+    height: "200px",
     color: "white",
     border: "none",
     boxShadow: `1px 1px ${10 + audioLevel * 40}px ${
