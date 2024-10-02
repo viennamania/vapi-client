@@ -21,19 +21,9 @@ export default function Home() {
           {/*
           Talk with Sarah to explore upcoming shows and book tickets.
           */}
-          Talk with Seunghyon.
+          Talk with AI Companion to explore the world.
         </p>
 
-        {/* powered by famnote */}
-        <div className="mt-4">
-          <a
-            href="#"
-            target="_blank"
-            className="text-sm text-slate-500"
-          >
-            Powered by famnote
-          </a>
-        </div>
 
       </div>
 
