@@ -395,10 +395,11 @@ export const assistant: CreateAssistantDTO | any = {
   //"안녕하세요. 무엇을 도와드릴까요?", 중국어로
   "你好，我是你的助手。我可以帮你什么？",
 
-  
+  /*
   serverUrl: process.env.NEXT_PUBLIC_SERVER_URL
     ? process.env.NEXT_PUBLIC_SERVER_URL
     : "https://08ae-202-43-120-244.ngrok-free.app/api/webhook",
+  */
   
   //serverUrl: "https://08ae-202-43-120-244.ngrok-free.app/api/webhook",
 
