@@ -62,9 +62,9 @@ function Assistant() {
       </div>
       
       {/* select assistant language */}
-      <div className="w-full flex justify-center items-center mb-5">
+      <div className="w-full flex justify-center items-center mt-5">
         <select
-          disabled={callStatus === CALL_STATUS.ACTIVE}
+          disabled={callStatus === CALL_STATUS.ACTIVE || callStatus === CALL_STATUS.LOADING}
           value={assistantLanguage}
           onChange={(e) => setAssistantLanguage(e.target.value)}
         >
@@ -76,16 +76,22 @@ function Assistant() {
       </div>
 
 
-      {address && (
-        <div className="user-input">
-          <AssistantButton
-            assistantLanguage={assistantLanguage}
-            audioLevel={audioLevel}
-            callStatus={callStatus}
-            toggleCall={toggleCall}
-          />
-        </div>
-      )}
+      <div className="w-full flex justify-center items-center mt-24">
+
+        {address && (
+          <div className="user-input">
+            <AssistantButton
+              assistantLanguage={assistantLanguage}
+              audioLevel={audioLevel}
+              callStatus={callStatus}
+              toggleCall={toggleCall}
+            />
+          </div>
+        )}
+
+      </div>
+
+
 
      
     </div>

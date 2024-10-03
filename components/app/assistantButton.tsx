@@ -39,9 +39,7 @@ const AssistantButton = ({
     height: "160px",
     color: "white",
     border: "none",
-    boxShadow: `1px 1px ${10 + audioLevel * 40}px ${
-      audioLevel * 10
-    }px ${color}`,
+    boxShadow: `1px 1px ${100 + audioLevel * 40}px ${audioLevel * 100}px ${color}`,
     backgroundColor:
       callStatus === CALL_STATUS.ACTIVE
         ? "red"
@@ -66,11 +64,17 @@ const AssistantButton = ({
       }
     >
       {callStatus === CALL_STATUS.ACTIVE ? (
-        <Square />
+        <Square
+          className="animate-pulse w-24 h-24"
+        />
       ) : callStatus === CALL_STATUS.LOADING ? (
-        <Loader2 className="animate-spin" />
+        <Loader2
+          className="animate-spin w-24 h-24"
+        />
       ) : (
-        <Mic />
+        <Mic
+          className="w-24 h-24"
+        />
       )}
     </Button>
   );

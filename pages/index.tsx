@@ -12,7 +12,7 @@ export default function Home() {
       className={`flex min-h-screen flex-col items-center justify-between p-12 ${inter.className}`}
     >
 
-      <div className="text-center mt-20">
+      <div className="text-center mt-0">
 
         {/* logo image */}
         <div className="flex justify-center">
@@ -45,7 +45,7 @@ export default function Home() {
 
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-4 mb-52">
+      <div className="w-full flex flex-col items-center justify-center gap-4 mb-52">
         
         <Assistant />
       </div>
