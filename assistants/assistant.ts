@@ -181,7 +181,7 @@ export const assistant: CreateAssistantDTO | any = {
 
 
 
-
+    /*
     functions: [
 
       {
@@ -341,9 +341,11 @@ export const assistant: CreateAssistantDTO | any = {
           required: ["email"],
         },
       },
-
-
     ],
+    */
+
+
+
   },
 
 
