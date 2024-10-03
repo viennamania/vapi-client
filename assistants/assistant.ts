@@ -84,7 +84,7 @@ export const assistant: CreateAssistantDTO | any = {
 
   },
 
-  recordingEnabled: false,
+  recordingEnabled: true,
 
   model: {
     provider: "openai",
