@@ -2,11 +2,29 @@ import { CALL_STATUS, useVapi } from "@/hooks/useVapi";
 import { Loader2, Mic, Square } from "lucide-react";
 import { Button } from "../ui/button";
 
+
+
 const AssistantButton = ({
+  
+  assistantLanguage,
+
   toggleCall,
   callStatus,
   audioLevel = 0,
-}: Partial<ReturnType<typeof useVapi>>) => {
+
+//}: Partial<ReturnType<typeof useVapi>>) => {
+
+}:
+{
+  assistantLanguage: string;
+  toggleCall: (assistantLanguage: string) => void;
+  callStatus: CALL_STATUS;
+  audioLevel?: number;
+}) => {
+
+
+  console.log("AssistantButton assistantLanguage", assistantLanguage);
+
   
   const color =
     callStatus === CALL_STATUS.ACTIVE
@@ -17,8 +35,8 @@ const AssistantButton = ({
 
   const buttonStyle = {
     borderRadius: "50%",
-    width: "200px",
-    height: "200px",
+    width: "160px",
+    height: "160px",
     color: "white",
     border: "none",
     boxShadow: `1px 1px ${10 + audioLevel * 40}px ${
@@ -43,7 +61,9 @@ const AssistantButton = ({
           ? "bg-orange-500 hover:bg-orange-700"
           : "bg-green-500 hover:bg-green-700"
       } flex items-center justify-center`}
-      onClick={toggleCall}
+      onClick={
+        toggleCall ? () => toggleCall(assistantLanguage) : () => {}
+      }
     >
       {callStatus === CALL_STATUS.ACTIVE ? (
         <Square />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useVapi } from "../../hooks/useVapi";
+import { CALL_STATUS, useVapi } from "../../hooks/useVapi";
 
 import { AssistantButton } from "./assistantButton";
 
@@ -12,6 +12,7 @@ import {
   useAddress,
 } from "@thirdweb-dev/react";
 
+import { use, useEffect, useState } from "react";
 
 function Assistant() {
 
@@ -21,7 +22,26 @@ function Assistant() {
   const address = '0x';
 
 
-  const { toggleCall, callStatus, audioLevel } = useVapi();
+  //const assistantLanguage = 'Korean';
+
+  const [assistantLanguage, setAssistantLanguage] = useState('Chinese');
+
+  console.log("assistantLanguage", assistantLanguage);
+
+  
+  const {
+    isSpeechActive,
+    callStatus,
+    audioLevel,
+    activeTranscript,
+    messages,
+    start,
+    stop,
+    toggleCall,
+  } = useVapi();
+  
+
+ 
 
   return (
     <div>
@@ -41,9 +61,23 @@ function Assistant() {
         <Display />
       </div>
       
+      {/* select assistant language */}
+      <div className="w-full flex justify-center items-center mb-5">
+        <select
+          disabled={callStatus === CALL_STATUS.ACTIVE}
+          value={assistantLanguage}
+          onChange={(e) => setAssistantLanguage(e.target.value)}
+        >
+          <option value="Chinese">Chinese</option>
+          <option value="Korean">Korean</option>
+        </select>
+      </div>
+
+
       {address && (
         <div className="user-input">
           <AssistantButton
+            assistantLanguage={assistantLanguage}
             audioLevel={audioLevel}
             callStatus={callStatus}
             toggleCall={toggleCall}

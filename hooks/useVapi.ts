@@ -22,6 +22,10 @@ export enum CALL_STATUS {
 
 export function useVapi() {
 
+
+  //const [assistantLanguage, setAssistantLanguage] = useState('Chinese');
+
+
   const [isSpeechActive, setIsSpeechActive] = useState(false);
   const [callStatus, setCallStatus] = useState<CALL_STATUS>(
     CALL_STATUS.INACTIVE
@@ -105,7 +109,11 @@ export function useVapi() {
   }, []);
 
 
-  const start = async () => {
+
+
+
+
+  const start = async (assistantLanguage: string) => {
     
     console.log("start");
 
@@ -114,9 +122,19 @@ export function useVapi() {
     
     //const response = vapi.start(assistant);
 
+    let assistantID = "";
+
+    if (assistantLanguage == "Korean") {
+      assistantID = "bd429aad-ac21-4d2c-b899-c77f227ca396";
+    } else {
+      assistantID = "7a0e2e00-d99b-467b-8639-b343722faba5";
+    }
+
     const response = vapi.start(
-      "7a0e2e00-d99b-467b-8639-b343722faba5"
+      assistantID
     );
+
+
     
     /*
     const response = vapi.start(
@@ -211,16 +229,21 @@ export function useVapi() {
     vapi.stop();
   };
 
-  const toggleCall = () => {
+  const toggleCall = (
+    assistantLanguage: string
+  ) => {
+
+    //setAssistantLanguage(assistantLanguage);
 
     console.log("toggleCall");
 
     if (callStatus == CALL_STATUS.ACTIVE) {
       stop();
     } else {
-      start();
+      start(assistantLanguage);
     }
   };
+
 
   return {
     isSpeechActive,
