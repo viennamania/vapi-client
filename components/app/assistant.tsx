@@ -70,6 +70,8 @@ function Assistant() {
         >
           <option value="Chinese">Chinese</option>
           <option value="Korean">Korean</option>
+          <option value="Japanese">Japanese</option>
+          <option value="English">English</option>
         </select>
       </div>
 

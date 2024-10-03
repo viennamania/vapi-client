@@ -126,8 +126,12 @@ export function useVapi() {
 
     if (assistantLanguage == "Korean") {
       assistantID = "bd429aad-ac21-4d2c-b899-c77f227ca396";
-    } else {
+    } else if (assistantLanguage == "Chinese") {
       assistantID = "7a0e2e00-d99b-467b-8639-b343722faba5";
+    } else if (assistantLanguage == "English") {
+      assistantID = "ae8e1fb1-de7b-4c42-aa9a-d9327a7873c1";
+    } else if (assistantLanguage == "Japanese") {
+      assistantID = "ee58686d-b50c-4e6e-9f6e-aa138762227b";
     }
 
     const response = vapi.start(
