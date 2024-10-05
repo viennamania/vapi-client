@@ -159,11 +159,11 @@ function Display() {
       {transcriptAssistant && (
         <>
           <div className="flex justify-center mt-4">
-            <p className="text-s text-green-500">{transcriptAssistant}</p>
+            <p className="text-lg text-green-500">{transcriptAssistant}</p>
           </div>
 
           <div className="flex justify-center mt-4">
-            <p className="text-s text-blue-500">{transcriptUser}</p>
+            <p className="text-3xl text-blue-500">{transcriptUser}</p>
           </div>
         </>
       )}

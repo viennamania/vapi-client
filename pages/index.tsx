@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-12 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center justify-between p-8 ${inter.className}`}
     >
 
       <div className="text-center mt-0">
@@ -19,8 +19,8 @@ export default function Home() {
         <Image
           src="/logo-olga.png"
           alt="AI Companion"
-          width={100}
-          height={100}
+          width={80}
+          height={80}
           className="rounded-md"
         />
         </div>
@@ -29,7 +29,7 @@ export default function Home() {
         <h1 className="text-3xl">Welcome to AI Companion</h1>
         */}
         {/* 중국어로 번역 */}
-        <h1 className="mt-10 text-3xl">欢迎来到人工智能伴侣</h1>
+        <h1 className="mt-5 text-xl">欢迎来到人工智能伴侣</h1>
 
         {/*
         <p className="text-slate-600 mt-2 text-lg">
