@@ -7,15 +7,13 @@ import { Button } from "../ui/button";
 const AssistantButton = ({
   
   assistantLanguage,
-
   toggleCall,
   callStatus,
   audioLevel = 0,
 
 //}: Partial<ReturnType<typeof useVapi>>) => {
 
-}:
-{
+}:{
   assistantLanguage: string;
   toggleCall: (assistantLanguage: string) => void;
   callStatus: CALL_STATUS;
@@ -23,7 +21,9 @@ const AssistantButton = ({
 }) => {
 
 
-  console.log("AssistantButton assistantLanguage", assistantLanguage);
+  //console.log("AssistantButton assistantLanguage", assistantLanguage);
+  //console.log("AssistantButton callStatus", callStatus);
+  //console.log("AssistantButton audioLevel", audioLevel);
 
   
   const color =
@@ -35,11 +35,11 @@ const AssistantButton = ({
 
   const buttonStyle = {
     borderRadius: "50%",
-    width: "160px",
-    height: "160px",
+    width: "100px",
+    height: "100px",
     color: "white",
     border: "none",
-    boxShadow: `1px 1px ${100 + audioLevel * 40}px ${audioLevel * 100}px ${color}`,
+    boxShadow: `1px 1px ${100 + audioLevel * 40}px ${audioLevel * 200}px ${color}`,
     backgroundColor:
       callStatus === CALL_STATUS.ACTIVE
         ? "red"
@@ -65,15 +65,15 @@ const AssistantButton = ({
     >
       {callStatus === CALL_STATUS.ACTIVE ? (
         <Square
-          className="animate-pulse w-24 h-24"
+          className="animate-pulse w-20 h-20"
         />
       ) : callStatus === CALL_STATUS.LOADING ? (
         <Loader2
-          className="animate-spin w-24 h-24"
+          className="animate-spin w-20 h-20"
         />
       ) : (
         <Mic
-          className="w-24 h-24"
+          className="w-20 h-20"
         />
       )}
     </Button>
