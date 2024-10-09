@@ -156,27 +156,31 @@ function Display() {
   return (
     <div className="w-full flex flex-col items-center justify-center gap-4">
 
-      {transcriptAssistant && (
-        <div className="w-full flex items-start justify-start h-10  mt-1">
+      <div className="w-full flex items-start justify-start h-16">
+        {transcriptAssistant && (
+       
           <p
             className="text-lg text-green-500 border-2 border-green-500 p-2 rounded-lg
             bg-transparent"
           >
             {transcriptAssistant}
           </p>
-        </div>
-      )}
+        )}
+      </div>
+    
 
-      {transcriptUser && (
-        <div className="w-full flex items-end justify-end h-10 mt-1">
+      
+      <div className="w-full flex items-end justify-end h-12">
+        {transcriptUser && (
           <p
             className="text-3xl text-blue-500 border-2 border-blue-500 p-2 rounded-lg
             bg-transparent"
           >
               {transcriptUser}
           </p>
-        </div>
-      )}
+        )}
+      </div>
+     
     
       {showList.length > 0 && status == "show" ? (
         
