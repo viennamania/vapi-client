@@ -389,7 +389,7 @@ function Assistant() {
  
 
   return (
-    <div className="w-full flex flex-col items-center justify-center gap-4 mb-52">
+    <div className="w-full flex flex-col items-center justify-center gap-4 ">
 
       {/* Connect Wallet */}
       {/*}
@@ -401,7 +401,7 @@ function Assistant() {
       */}
 
 
-      <div className="z-20 mt-0 absolute top-0 w-full h-80 flex flex-col items-center justify-end gap-4 p-5">
+      <div className="z-20 mt-0 absolute top-10 w-full h-80 flex flex-col items-center justify-end gap-4 p-5">
         <Display />
 
         {/* select assistant language */}
@@ -431,7 +431,7 @@ function Assistant() {
 
 
       <div
-        className="z-10 mt-10 absolute top-0 w-full h-full bg-no-repeat bg-contain pointer-events-none
+        className="z-10 mt-16  absolute top-0 w-full h-full bg-no-repeat bg-contain pointer-events-none
 
         "
         style={{
