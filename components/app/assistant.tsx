@@ -15,7 +15,7 @@ import {
 import Image from 'next/image';
 
 
-import { Suspense, useEffect, useState } from 'react'
+import { Suspense, use, useEffect, useState } from 'react'
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, OrbitControls, Stage, CameraShake, useAnimations } from '@react-three/drei';
 
@@ -30,12 +30,18 @@ useGLTF.preload('/robot.gltf');
 
 
 
-function Model(
-  props : JSX.IntrinsicElements['group']
-  //audioLevel: number
-  ///, { audioLevel } : { audioLevel: number }
+interface ModelProps {
+  callStatus: CALL_STATUS;
+  audioLevel: number;
+  children?: React.ReactNode;
+  [key: string]: any;
+}
 
-) {
+function Model({ callStatus, audioLevel, ...props }: ModelProps) {
+
+  //console.log("Model callStatus", callStatus);
+  //console.log("Model audioLevel", audioLevel);
+
 
   const { scene, animations } = useGLTF('/robot-draco.glb');
 
@@ -43,13 +49,275 @@ function Model(
 
 
 
-  //console.log("Model audioLevel", audioLevel);
+  // 1-10 seconds random animation
+
+  const [randomAnimation, setRandomAnimation] = useState(0);
+  useEffect(() => {
+
+    if (callStatus === CALL_STATUS.ACTIVE) {
+
+      // random time interval
+      // each time interval is random
+      // each time interval is between 1 and 10 seconds
+
+      const randomTime = Math.floor(Math.random() * 10) + 1;
+
+      const interval = setInterval(() => {
+        // random animation
+        const randomAnimation = Math.floor(Math.random() * 14) + 1;
+
+        if (randomAnimation === 1) {
+          actions.Dance?.play();
+          actions.Death?.stop();
+          actions.Idle?.stop();
+          actions.Jump?.stop();
+          actions.No?.stop();
+          actions.Punch?.stop();
+          actions.Running?.stop();
+          actions.Sitting?.stop();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.stop();
+          actions.WalkJump?.stop();
+        } else if (randomAnimation === 2) {
+          actions.Dance?.stop();
+          actions.Death?.play();
+          actions.Idle?.stop();
+          actions.Jump?.stop();
+          actions.No?.stop();
+          actions.Punch?.stop();
+          actions.Running?.stop();
+          actions.Sitting?.stop();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.stop();
+          actions.WalkJump?.stop();
+        } else if (randomAnimation === 3) {
+          actions.Dance?.stop();
+          actions.Death?.stop();
+          actions.Idle?.play();
+          actions.Jump?.stop();
+          actions.No?.stop();
+          actions.Punch?.stop();
+          actions.Running?.stop();
+          actions.Sitting?.stop();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.stop();
+          actions.WalkJump?.stop();
+        } else if (randomAnimation === 4) {
+          actions.Dance?.stop();
+          actions.Death?.stop();
+          actions.Idle?.stop();
+          actions.Jump?.play();
+          actions.No?.stop();
+          actions.Punch?.stop();
+          actions.Running?.stop();
+          actions.Sitting?.stop();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.stop();
+          actions.WalkJump?.stop();
+        } else if (randomAnimation === 5) {
+          actions.Dance?.stop();
+          actions.Death?.stop();
+          actions.Idle?.stop();
+          actions.Jump?.stop();
+          actions.No?.play();
+          actions.Punch?.stop();
+          actions.Running?.stop();
+          actions.Sitting?.stop();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.stop();
+          actions.WalkJump?.stop();
+        } else if (randomAnimation === 6) {
+          actions.Dance?.stop();
+          actions.Death?.stop();
+          actions.Idle?.stop();
+          actions.Jump?.stop();
+          actions.No?.stop();
+          actions.Punch?.play();
+          actions.Running?.stop();
+          actions.Sitting?.stop();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.stop();
+          actions.WalkJump?.stop();
+        } else if (randomAnimation === 7) {
+          actions.Dance?.stop();
+          actions.Death?.stop();
+          actions.Idle?.stop();
+          actions.Jump?.stop();
+          actions.No?.stop();
+          actions.Punch?.stop();
+          actions.Running?.play();
+          actions.Sitting?.stop();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.stop();
+          actions.WalkJump?.stop();
+        } else if (randomAnimation === 8) {
+          actions.Dance?.stop();
+          actions.Death?.stop();
+          actions.Idle?.stop();
+          actions.Jump?.stop();
+          actions.No?.stop();
+          actions.Punch?.stop();
+          actions.Running?.stop();
+          actions.Sitting?.play();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.stop();
+          actions.WalkJump?.stop();
+        } else if (randomAnimation === 9) {
+          actions.Dance?.stop();
+          actions.Death?.stop();
+          actions.Idle?.stop();
+          actions.Jump?.stop();
+          actions.No?.stop();
+          actions.Punch?.stop();
+          actions.Running?.stop();
+          actions.Sitting?.stop();
+          actions.Standing?.play();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.stop();
+          actions.WalkJump?.stop();
+        } else if (randomAnimation === 10) {
+          actions.Dance?.stop();
+          actions.Death?.stop();
+          actions.Idle?.stop();
+          actions.Jump?.stop();
+          actions.No?.stop();
+          actions.Punch?.stop();
+          actions.Running?.stop();
+          actions.Sitting?.stop();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.play();
+          actions.Walking?.stop();
+          actions.WalkJump?.stop();
+        } else if (randomAnimation === 11) {
+          actions.Dance?.stop();
+          actions.Death?.stop();
+          actions.Idle?.stop();
+          actions.Jump?.stop();
+          actions.No?.stop();
+          actions.Punch?.stop();
+          actions.Running?.stop();
+          actions.Sitting?.stop();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.play();
+          actions.WalkJump?.stop();
+        } else if (randomAnimation === 12) {
+          actions.Dance?.stop();
+          actions.Death?.stop();
+          actions.Idle?.stop();
+          actions.Jump?.stop();
+          actions.No?.stop();
+          actions.Punch?.stop();
+          actions.Running?.stop();
+          actions.Sitting?.stop();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.stop();
+          actions.WalkJump?.play();
+        } else if (randomAnimation === 13) {
+          actions.Dance?.stop();
+          actions.Death?.stop();
+          actions.Idle?.stop();
+          actions.Jump?.stop();
+          actions.No?.stop();
+          actions.Punch?.stop();
+          actions.Running?.stop();
+          actions.Sitting?.stop();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.stop();
+          actions.WalkJump?.stop();
+          actions.Wave?.play();
+        } else if (randomAnimation === 14) {
+          actions.Dance?.stop();
+          actions.Death?.stop();
+          actions.Idle?.stop();
+          actions.Jump?.stop();
+          actions.No?.stop();
+          actions.Punch?.stop();
+          actions.Running?.stop();
+          actions.Sitting?.stop();
+          actions.Standing?.stop();
+          actions.ThumbsUp?.stop();
+          actions.Walking?.stop();
+          actions.WalkJump?.stop();
+          actions.Yes?.play();
+        } 
+
+      }, randomTime * 1000);
+
+
+      return () => clearInterval(interval);
+
+    } else {
+      actions.Dance?.stop();
+      actions.Death?.stop();
+      actions.Idle?.play();
+      actions.Jump?.stop();
+      actions.No?.stop();
+      actions.Punch?.stop();
+      actions.Running?.stop();
+      actions.Sitting?.stop();
+      actions.Standing?.stop();
+      actions.ThumbsUp?.stop();
+      actions.Walking?.stop();
+      actions.WalkJump?.stop();
+      actions.Wave?.stop();
+      actions.Yes?.stop();
+      
+    }
+   
+  } , [actions, callStatus]);
+
 
   
   useEffect(() => {
-    
-    actions.Idle?.play()
 
+    /*
+    1. Dance
+    2. Death
+    3. Idle
+    4. Jump
+    5. No
+    6. Punch
+    7. Running
+    8. Sitting
+    9. Standing
+    10. ThumbsUp
+    11. Walking
+    12. WalkJump
+    13. Wave
+    14. Yes
+    */
+    
+    
+    //actions.Idle?.play();
+
+    // if callStatus is active then play random animation
+    // if callStatus is not active then play idle animation
+  
+
+    if (callStatus === CALL_STATUS.ACTIVE) {
+
+    } else {
+      actions.Idle?.play();
+    }
+
+    //actions.Idle?.play();
+
+    //actions.Idle?.setEffectiveTimeScale(
+    //  1 + audioLevel * 10
+    //);
+
+  
 
 
     //scene.traverse((obj) => obj.isMesh && (obj.receiveShadow = obj.castShadow = true))
@@ -62,7 +330,8 @@ function Model(
     })
 
 
-  }, [actions, scene])
+  }, [actions, scene, callStatus]);
+
 
   return <primitive object={scene} {...props} />
 }
@@ -184,7 +453,13 @@ function Assistant() {
    
             >
               
-              <Model/>
+              <Model
+
+                callStatus={callStatus}
+                audioLevel={audioLevel}
+
+
+              />
               
             </Stage>
           </Suspense>
