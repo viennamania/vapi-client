@@ -154,18 +154,28 @@ function Display() {
 
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
+    <div className="w-full flex flex-col items-center justify-center gap-4">
 
       {transcriptAssistant && (
-        <>
-          <div className="flex justify-center mt-4">
-            <p className="text-lg text-green-500">{transcriptAssistant}</p>
-          </div>
+        <div className="w-full flex items-start justify-start h-10  mt-1">
+          <p
+            className="text-lg text-green-500 border-2 border-green-500 p-2 rounded-lg
+            bg-white"
+          >
+            {transcriptAssistant}
+          </p>
+        </div>
+      )}
 
-          <div className="flex justify-center mt-4">
-            <p className="text-3xl text-blue-500">{transcriptUser}</p>
-          </div>
-        </>
+      {transcriptUser && (
+        <div className="w-full flex items-end justify-end h-10 mt-1">
+          <p
+            className="text-3xl text-blue-500 border-2 border-blue-500 p-2 rounded-lg
+            bg-white"
+          >
+              {transcriptUser}
+          </p>
+        </div>
       )}
     
       {showList.length > 0 && status == "show" ? (

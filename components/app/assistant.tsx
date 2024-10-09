@@ -12,11 +12,14 @@ import {
   useAddress,
 } from "@thirdweb-dev/react";
 
+import Image from 'next/image';
 
 
 import { Suspense, useEffect, useState } from 'react'
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, OrbitControls, Stage, CameraShake, useAnimations } from '@react-three/drei';
+
+
 
 
 useGLTF.preload('/robot.gltf');
@@ -126,8 +129,12 @@ function Assistant() {
       </div>
       */}
 
+
+
       <div
-        className="z-10 mt-20 absolute top-0 w-full h-full bg-no-repeat bg-contain pointer-events-none"
+        className="z-10 mt-20 absolute top-0 w-full h-full bg-no-repeat bg-contain pointer-events-none
+
+        "
         style={{
           backgroundImage: "url('/view.svg')",
         }}
@@ -136,8 +143,8 @@ function Assistant() {
 
       <div
         id="canvas-container"
-        className="w-full h-96
-        mt-3"
+        className="w-full flex flex-col items-center justify-center h-64
+        mt-3 xl:mt-48"
       >
         <Canvas shadows camera={{ fov: 50 }}>
 
@@ -173,38 +180,73 @@ function Assistant() {
       </div>
 
 
-
-
-      <div className="chat-history">
-        <Display />
-      </div>
-      
       {/* select assistant language */}
-      <div className="w-full flex justify-center items-center mt-5">
+      <div className="w-full flex justify-center items-center mt-1">
         <select
           disabled={callStatus === CALL_STATUS.ACTIVE || callStatus === CALL_STATUS.LOADING}
           value={assistantLanguage}
           onChange={(e) => setAssistantLanguage(e.target.value)}
+          className="w-1/2 p-2 rounded-lg bg-gray-100"
         >
-          <option value="Chinese">Chinese</option>
-          <option value="Korean">Korean</option>
-          <option value="Japanese">Japanese</option>
-          <option value="English">English</option>
+          <option value="Chinese">
+            中文(Chinese)
+          </option>
+          <option value="Korean">
+            한국어(Korean)
+          </option>
+          <option value="Japanese">
+            日本語(Japanese)
+          </option>
+          <option value="English">
+            English(English)
+          </option>
         </select>
       </div>
+     
+        
+      <Display />
 
 
-      <div className="w-full flex justify-center items-center mt-24">
+
+
+      {/* jarvis-bg.jpg */}
+      {/* bottom-0 */}  
+      <div
+        className="z-0 absolute bottom-0 w-full h-96
+          flex flex-col items-center justify-center
+        "
+        //style={{
+        //  backgroundImage: "url('/jarvis-bg.jpg')",
+        //}}
+      >
+        
+
+        <Image
+          src="/jarvis-bg.jpg"
+          alt="Jarvis"
+          width={500}
+          height={500}
+          className="rounded-t-3xl
+
+            
+
+          "
+        />
+      </div>
+
+      {/* move right 2px */}
+      <div className="
+        transform translate-x-3 -translate-y-1
+        z-10 absolute bottom-0 w-full h-96 flex flex-col items-center justify-center gap-4">
 
         {address && (
-          <div className="user-input">
             <AssistantButton
               assistantLanguage={assistantLanguage}
               audioLevel={audioLevel}
               callStatus={callStatus}
               toggleCall={toggleCall}
             />
-          </div>
+
         )}
 
       </div>
