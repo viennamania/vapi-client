@@ -22,7 +22,9 @@ import { useGLTF, OrbitControls, Stage, CameraShake, useAnimations } from '@reac
 
 
 
-useGLTF.preload('/robot.gltf');
+//useGLTF.preload('/robot.gltf');
+
+useGLTF.preload('/robot-draco.glb');
 
 
 
@@ -272,7 +274,7 @@ function Model({ callStatus, audioLevel, ...props }: ModelProps) {
       actions.WalkJump?.stop();
       actions.Wave?.stop();
       actions.Yes?.stop();
-      
+
     }
    
   } , [actions, callStatus]);
