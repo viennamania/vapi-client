@@ -160,7 +160,7 @@ function Display() {
         <div className="w-full flex items-start justify-start h-10  mt-1">
           <p
             className="text-lg text-green-500 border-2 border-green-500 p-2 rounded-lg
-            bg-white"
+            bg-transparent"
           >
             {transcriptAssistant}
           </p>
@@ -171,7 +171,7 @@ function Display() {
         <div className="w-full flex items-end justify-end h-10 mt-1">
           <p
             className="text-3xl text-blue-500 border-2 border-blue-500 p-2 rounded-lg
-            bg-white"
+            bg-transparent"
           >
               {transcriptUser}
           </p>

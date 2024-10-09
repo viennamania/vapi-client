@@ -130,9 +130,37 @@ function Assistant() {
       */}
 
 
+      <div className="z-20 mt-0 absolute top-0 w-full h-80 flex flex-col items-center justify-end gap-4 p-5">
+        <Display />
+
+        {/* select assistant language */}
+        <div className="w-full flex justify-center items-center mt-1">
+          <select
+            disabled={callStatus === CALL_STATUS.ACTIVE || callStatus === CALL_STATUS.LOADING}
+            value={assistantLanguage}
+            onChange={(e) => setAssistantLanguage(e.target.value)}
+            className="w-1/2 p-2 rounded-lg bg-gray-100"
+          >
+            <option value="Chinese">
+              中文(Chinese)
+            </option>
+            <option value="Korean">
+              한국어(Korean)
+            </option>
+            <option value="Japanese">
+              日本語(Japanese)
+            </option>
+            <option value="English">
+              English(English)
+            </option>
+          </select>
+        </div>
+
+      </div>
+
 
       <div
-        className="z-10 mt-20 absolute top-0 w-full h-full bg-no-repeat bg-contain pointer-events-none
+        className="z-10 mt-10 absolute top-0 w-full h-full bg-no-repeat bg-contain pointer-events-none
 
         "
         style={{
@@ -180,31 +208,9 @@ function Assistant() {
       </div>
 
 
-      {/* select assistant language */}
-      <div className="w-full flex justify-center items-center mt-1">
-        <select
-          disabled={callStatus === CALL_STATUS.ACTIVE || callStatus === CALL_STATUS.LOADING}
-          value={assistantLanguage}
-          onChange={(e) => setAssistantLanguage(e.target.value)}
-          className="w-1/2 p-2 rounded-lg bg-gray-100"
-        >
-          <option value="Chinese">
-            中文(Chinese)
-          </option>
-          <option value="Korean">
-            한국어(Korean)
-          </option>
-          <option value="Japanese">
-            日本語(Japanese)
-          </option>
-          <option value="English">
-            English(English)
-          </option>
-        </select>
-      </div>
+
      
-        
-      <Display />
+
 
 
 
@@ -224,8 +230,8 @@ function Assistant() {
         <Image
           src="/jarvis-bg.jpg"
           alt="Jarvis"
-          width={500}
-          height={500}
+          width={400}
+          height={300}
           className="rounded-t-3xl
 
             
