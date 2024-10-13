@@ -39,14 +39,31 @@ export default function Home() {
       {/* close button */}
       {/* if clicked, goto 'https://olgaai.io/${token}/${userid}' */}
 
-      <div className="w-full flex flex-row items-center justify-between gap-4 bg-gray-100 p-4">
-        <Image
-          src="/logo-olga.png"
-          alt="AI Companion"
-          width={38}
-          height={38}
-          className="rounded-md"
-        />
+      <div
+        //className="w-full flex flex-row items-center justify-between gap-4 bg-gray-100 p-4"
+        //className="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-4
+        //</main>bg-gradient-to-r from-green-400 to-blue-500
+        //"
+
+        className="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-4 border-b shrink-0
+        bg-gradient-to-b from-yellow-100 to-yellow-500
+
+
+        "
+      >
+        <div className='flex flex-row items-center'>
+          <Image
+            
+            //src="/icon-chatgpt-dark.png"
+            src="/icon-olga-dark.png"
+            alt="Next Chat"
+            width={35}
+            height={35}
+          />
+
+          <span className="text-lg font-bold ml-2">ChatGPT</span>
+        </div>
+
         <button
           className="flex justify-center"
           onClick={() => {
@@ -62,6 +79,7 @@ export default function Home() {
           />
         </button>
       </div>
+
 
       {/*
       <div className="w-full flex flex-row items-start justify-start gap-4">
