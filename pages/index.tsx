@@ -46,7 +46,7 @@ export default function Home() {
         //"
 
         className="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-4 border-b shrink-0
-        bg-gradient-to-b from-yellow-100 to-yellow-500
+          bg-gradient-to-b from-green-400 to-blue-500
 
 
         "
