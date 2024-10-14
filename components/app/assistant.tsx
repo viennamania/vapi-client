@@ -432,7 +432,7 @@ function Assistant() {
 
 
       <div
-        className="z-10 mt-16  absolute top-0 w-full h-full bg-no-repeat bg-contain pointer-events-none
+        className="z-10 mt-0 absolute top-0  h-full bg-no-repeat bg-contain pointer-events-none
 
         "
         style={{
