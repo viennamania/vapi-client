@@ -401,12 +401,12 @@ function Assistant() {
       */}
 
 
-      <div className="z-20 mt-0 absolute top-10 w-full h-80 flex flex-col items-center justify-end gap-4 p-5">
+      <div className="z-20 mt-0 absolute top-5 w-full h-80 flex flex-col items-center justify-end gap-4 p-5">
         
         <Display />
 
         {/* select assistant language */}
-        <div className="w-full flex justify-center items-center mt-1">
+        <div className="w-full flex justify-center items-center mt-5">
           <select
             disabled={callStatus === CALL_STATUS.ACTIVE || callStatus === CALL_STATUS.LOADING}
             value={assistantLanguage}
@@ -432,19 +432,28 @@ function Assistant() {
 
 
       <div
-        className="z-10 mt-0 absolute top-0  h-full bg-no-repeat bg-contain pointer-events-none
+        className="z-10 mt-0 absolute top-20 w-full xl:w-1/2 flex flex-col items-center justify-center gap-4
 
         "
-        style={{
-          backgroundImage: "url('/view.svg')",
-        }}
+        //style={{
+        //  backgroundImage: "url('/view.svg')",
+        //}}
+      >
+        <Image
+          src="/view.svg"
+          alt="View"
+          width={400}
+          height={300}
+          className="rounded-t-3xl
+          "
+        />
 
-      ></div>
+      </div>
 
       <div
         id="canvas-container"
         className="w-full flex flex-col items-center justify-center h-64
-        mt-3 xl:mt-48"
+        mt-3 "
       >
         <Canvas shadows camera={{ fov: 50 }}>
 

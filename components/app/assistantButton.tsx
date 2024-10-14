@@ -39,7 +39,9 @@ const AssistantButton = ({
     height: "100px",
     color: "white",
     border: "none",
+    
     boxShadow: `1px 1px ${100 + audioLevel * 40}px ${audioLevel * 200}px ${color}`,
+    
     backgroundColor:
       callStatus === CALL_STATUS.ACTIVE
         ? "red"

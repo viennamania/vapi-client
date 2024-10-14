@@ -28,11 +28,15 @@ export default function Home() {
 
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-start p-0 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center justify-start p-0 ${inter.className}
+        
+        bg-gradient-to-r from-green-400 to-blue-500
+
+        `}
     
-      style={{
-          backgroundColor: "#303035"
-      } }
+      //style={{
+      //    backgroundColor: "#303035"
+      //} }
 
     >
       {/* header */}

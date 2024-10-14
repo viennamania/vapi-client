@@ -156,11 +156,15 @@ function Display() {
   return (
     <div className="w-full flex flex-col items-center justify-center gap-4">
 
-      <div className="w-full flex items-start justify-start h-16">
+      <div className="w-full xl:w-1/2 flex items-start justify-start h-12">
         {transcriptAssistant && (
        
           <p
-            className="text-lg text-green-500 border-2 border-green-500 p-2 rounded-lg
+            className="text-lg xl:text-3xl
+             text-black
+             border-2 
+             border-white
+             p-2 rounded-lg
             bg-transparent"
           >
             {transcriptAssistant}
@@ -170,10 +174,14 @@ function Display() {
     
 
       
-      <div className="w-full flex items-end justify-end h-12">
+      <div className="w-full xl:w-1/2 flex items-end justify-end h-12">
         {transcriptUser && (
           <p
-            className="text-3xl text-blue-500 border-2 border-blue-500 p-2 rounded-lg
+            className="text-lg xl:text-3xl 
+            text-black
+            border-2 
+            border-white
+            p-2 rounded-lg
             bg-transparent"
           >
               {transcriptUser}
