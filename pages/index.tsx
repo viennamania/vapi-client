@@ -120,17 +120,8 @@ export default function Home() {
 
           <div className="grid grid-cols-5 gap-2 border-t mt-4 px-2">
             <button
-              style = {
-                {
-                  padding: "10px",
-                  border: "none",
-                  borderBottom: "1px solid #ccc",
-                  marginBottom: "10px",
-                  borderRadius: "6px"
-                }
-              }
               className='h-24 flex flex-col items-center justify-start p-2 
-              rounded-lg hover:bg-gray-200'
+              hover:bg-gray-200'
               onClick={() => {
                 // Coming soon
 
@@ -148,17 +139,8 @@ export default function Home() {
                 </span>
             </button>
             <button
-              style = {
-                {
-                  padding: "10px",
-                  border: "none",
-                  borderBottom: "1px solid #ccc",
-                  marginBottom: "10px",
-                  borderRadius: "6px"
-                }
-              }
               className='h-24 flex flex-col items-center justify-start p-2
-              rounded-lg hover:bg-gray-200'
+              hover:bg-gray-200'
               onClick={() => {
                 // '/?userid=${userid}&token=${token}'
 
@@ -186,18 +168,10 @@ export default function Home() {
                 </span>
             </button>
             <button
-              style = {
-                {
-                  backgroundColor: "#5F9EA0",
-                  padding: "10px",
-                  border: "none",
-                  borderBottom: "1px solid #ccc",
-                  marginBottom: "10px",
-                  borderRadius: "6px"
-                }
-              }
               className='h-24 flex flex-col items-center justify-start p-2
-              rounded-lg text-white'
+              text-white
+              bg-blue-500 hover:bg-blue-700
+              '
               //style = {{backgroundColor: "cadetblue"}} // cadetblue color #5F9EA0
               //</div>onClick={() => {
                 //window.open("https://olgaai.io/?userid=" + userid + "&token=" + token, "_self");
@@ -217,17 +191,8 @@ export default function Home() {
                 </span>
             </button>
             <button
-              style = {
-                {
-                  padding: "10px",
-                  border: "none",
-                  borderBottom: "1px solid #ccc",
-                  marginBottom: "10px",
-                  borderRadius: "6px"
-                }
-              }
               className='h-24 flex flex-col items-center justify-start p-2
-              rounded-lg hover:bg-gray-200'
+              hover:bg-gray-200'
               onClick={() => {
                 //window.open("https://olgagpt.com/sub/order_list.asp", "_self");
 
@@ -246,17 +211,8 @@ export default function Home() {
                 </span>
             </button>
             <button
-              style = {
-                {
-                  padding: "10px",
-                  border: "none",
-                  borderBottom: "1px solid #ccc",
-                  marginBottom: "10px",
-                  borderRadius: "6px"
-                }
-              }
               className='h-24 flex flex-col items-center justify-start p-2
-              rounded-lg hover:bg-gray-200'
+              hover:bg-gray-200'
               onClick={() => {
                 window.open("https://olgagpt.com/main.asp", "_parent");
               }}
