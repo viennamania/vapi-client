@@ -6,6 +6,12 @@ import { ShowsComponent } from "./shows";
 import { Ticket } from "./ticket";
 
 
+import {
+  toast,
+} from 'react-toastify';
+
+
+
 export enum CALL_STATUS {
   INACTIVE = "inactive",
   ACTIVE = "active",
@@ -113,8 +119,22 @@ function Display() {
         message.type === MessageTypeEnum.TRANSCRIPT
       ) {
         console.log("TRANSCRIPT", message.transcript);
-        if (message.role === "user") setTranscriptUser(message.transcript);
-        else if (message.role === "assistant") setTranscriptAssistant(message.transcript);
+        if (message.role === "user") {
+          
+          // toast stack disabled
+          //toast.success(message.transcript, {
+          //  toastId: 'success1',
+          //});
+
+          setTranscriptUser(message.transcript);
+
+        } else if (message.role === "assistant") {
+          
+          ////toast.info(message.transcript);
+
+          setTranscriptAssistant(message.transcript);
+
+        }
       }
 
       

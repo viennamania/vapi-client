@@ -22,6 +22,9 @@ import { useState } from "react";
  
 
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -35,6 +38,25 @@ export default function App({ Component, pageProps }: AppProps) {
 
 
     <QueryClientProvider client={new QueryClient()}>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        
+        draggable
+
+        // stacking disabled
+
+        stacked={false}
+
+
+        pauseOnHover
+      />
 
       {/*
       <ThirdwebProvider
@@ -66,6 +88,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </ThirdwebProvider>
       */}
 
+    
 
     </QueryClientProvider>
   );
