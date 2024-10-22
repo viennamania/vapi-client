@@ -58,7 +58,7 @@ export default function Home() {
         "
       >
         <Link
-          href={`https://olgaai.io/${token}/${userid}`}
+          href={`https://olgaai.io?token=${token}&userid=${userid}`}
           target="_self"
         >
 
@@ -94,6 +94,11 @@ export default function Home() {
         */}
 
       </div>
+
+
+
+
+
 
 
       {/*
