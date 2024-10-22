@@ -127,6 +127,7 @@ function Display() {
           //});
 
           setTranscriptUser(message.transcript);
+          
 
         } else if (message.role === "assistant") {
           

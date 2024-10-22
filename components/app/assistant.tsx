@@ -505,7 +505,7 @@ function Assistant() {
       {/* jarvis-bg.jpg */}
       {/* bottom-0 */}  
       <div
-        className="z-0 absolute bottom-20 w-full h-96
+        className="z-0 absolute bottom-0 w-full h-96
           flex flex-col items-center justify-center
         "
         //style={{
@@ -530,7 +530,7 @@ function Assistant() {
       {/* move right 2px */}
       <div className="
         transform translate-x-3 -translate-y-1
-        z-10 absolute bottom-20 w-full h-96 flex flex-col items-center justify-center gap-4">
+        z-10 absolute bottom-0 w-full h-96 flex flex-col items-center justify-center gap-4">
 
         {address && (
             <AssistantButton

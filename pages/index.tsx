@@ -5,6 +5,8 @@ import { Assistant } from "@/components/app/assistant";
 import { useSearchParams } from 'next/navigation'
 
 
+import Link from 'next/link'
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -55,18 +57,24 @@ export default function Home() {
 
         "
       >
-        <div className='flex flex-row items-center'>
-          <Image
-            
-            //src="/icon-chatgpt-dark.png"
-            src="/icon-olga-dark.png"
-            alt="Next Chat"
-            width={35}
-            height={35}
-          />
+        <Link
+          href={`https://olgaai.io/${token}/${userid}`}
+          target="_self"
+        >
 
-          <span className="text-lg font-bold ml-2">ChatGPT</span>
-        </div>
+          <div className='flex flex-row items-center'>
+            <Image
+              
+              //src="/icon-chatgpt-dark.png"
+              src="/icon-olga-dark.png"
+              alt="Next Chat"
+              width={35}
+              height={35}
+            />
+
+            <span className="text-lg font-bold ml-2">ChatGPT</span>
+          </div>
+        </Link>
 
         {/*}
         <button
@@ -110,7 +118,7 @@ export default function Home() {
       <Assistant />
 
       
-      
+      {/*
       <div className="fixed inset-x-0 bottom-0 w-full bg-gradient-to-b from-muted/30 from-0% to-muted/30 to-50% duration-300 ease-in-out animate-in dark:from-background/10 dark:from-10% dark:to-background/80 peer-[[data-state=open]]:group-[]:lg:pl-[250px] peer-[[data-state=open]]:group-[]:xl:pl-[300px]">
  
       <div className="mx-auto sm:max-w-2xl sm:px-4">
@@ -144,14 +152,6 @@ export default function Home() {
               onClick={() => {
                 // '/?userid=${userid}&token=${token}'
 
-                /*
-                router.push(
-                  {
-                    pathname: "/",
-                    search: `?userid=${username}&token=${userid}`,
-                  }
-                );
-                */
 
                 window.open(`https://image.olgaai.io/?userid=${userid}&token=${token}`, "_self");
 
@@ -231,10 +231,17 @@ export default function Home() {
           </div>
 
         </div>
+
+        
         
 
       </div>
+
+
+
     </div>
+
+      */}
       
   
 
