@@ -127,7 +127,7 @@ function Display() {
           //});
 
           setTranscriptUser(message.transcript);
-          
+
 
         } else if (message.role === "assistant") {
           
@@ -177,6 +177,7 @@ function Display() {
   return (
     <div className="w-full flex flex-col items-center justify-center gap-4">
 
+      {/*
       <div className="w-full xl:w-1/2 flex items-start justify-start h-12">
         {transcriptAssistant && (
        
@@ -209,6 +210,7 @@ function Display() {
           </p>
         )}
       </div>
+      */}
      
     
       {showList.length > 0 && status == "show" ? (
