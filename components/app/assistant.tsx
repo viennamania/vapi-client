@@ -432,7 +432,7 @@ function Assistant() {
 
 
       <div
-        className="z-10 mt-0 absolute top-20 w-full xl:w-1/2 flex flex-col items-center justify-center gap-4
+        className="z-10 mt-0  absolute top-[60px] w-full xl:w-1/2 flex flex-col items-center justify-center gap-4
 
         "
         //style={{
@@ -452,10 +452,15 @@ function Assistant() {
 
       <div
         id="canvas-container"
-        className="w-full flex flex-col items-center justify-center h-64
-        mt-3 "
+        className="w-full flex flex-col items-center justify-center
+        h-32
+        mt-14
+        "
       >
-        <Canvas shadows camera={{ fov: 50 }}>
+        <Canvas
+          shadows
+          camera={{ fov: 50 }}
+        >
 
           <Suspense fallback={null}>
             <Stage
